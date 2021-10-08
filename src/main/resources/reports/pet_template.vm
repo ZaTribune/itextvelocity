@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <title>Pet Sale!</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+<!--
+  email template takes only live images path which are deployed,
+  not local project paths like src="${pageContext.request.contextPath}/resources/images/<images>.jpg"
+  Issue is fixed by src="www.<domain>.com/images/<image>.jpg"
+  doesn't support SVG
+-->
+<img src="http://localhost:8080/resources/images/spring.png"
+     style="width:100px;height:100px;" alt="image"/>
+<div class="text-center bg-dark">
+    <h3 style="color: red">$petList.size() Pets on Sale!</h3>
+
+    <BR/> #set( $count = 1 )
+    <table style="width:100%">
+        <tr>
+            <th>Count</th>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        #foreach( $pet in $petList )
+            <tr>
+                <TD>$count)</TD>
+                <TD>$pet.name</TD>
+                <TD>$pet.price</TD>
+            </tr>
+            #set( $count = $count + 1 ) #end
+    </table>
+</div>
+
+</body>
+
+</html>

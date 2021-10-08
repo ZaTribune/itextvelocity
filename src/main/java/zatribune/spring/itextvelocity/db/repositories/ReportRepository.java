@@ -1,0 +1,18 @@
+package zatribune.spring.itextvelocity.db.repositories;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import zatribune.spring.itextvelocity.db.entities.Report;
+
+import java.util.Optional;
+
+public interface ReportRepository extends CrudRepository<Report,Long> {
+
+
+     @Query("select r from Report r left join fetch r.reportFields left join fetch r.reportLists" +
+             " where r.id=?1")
+     Optional<Report> findById(Long id);
+
+
+
+}
