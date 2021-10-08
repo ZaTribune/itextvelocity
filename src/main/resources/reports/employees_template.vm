@@ -30,9 +30,8 @@
 <header>
     ## check for null/existence
     <h1>$!title</h1>
-    <h1>${root-path}</h1>
 </header>
-<div class="text-center bg-dark">
+<div>
     <h4>Issued By: <span style="color: green">$issued_by</span></h4>
     <h4>Reason: <span style="color: green">$reason</span></h4>
     <h4>Note: <span style="color: green">$note</span></h4>
