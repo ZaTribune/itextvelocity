@@ -1,11 +1,15 @@
 # ITEXT Velocity
   
-A Demo project for generating PDF reports in Spring Boot using IText &amp; Apache Velocity.  
+A Demo project for generating PDF reports in Spring Boot using Apache Velocity &amp; IText.  
 
 <p align="center">
-  <img src="src/main/resources/static/images/spring.svg" width="200" height="200"/>
-  <img src="src/main/resources/static/images/apache_velocity.svg" width="200" height="200"/>
-  <img src="src/main/resources/static/images/itext.svg" width="200" height="200"/>
+  <table>
+    <tr>
+      <td> <img src="src/main/resources/static/images/spring.svg" height="200"/></td>
+      <td><img src="src/main/resources/static/images/apache_velocity.svg" height="200"/></td>
+      <td><img src="src/main/resources/static/images/itext.svg" height="200" /></td>
+    </tr>
+  </table>
 </p>
 
 ## Steps to deploy
