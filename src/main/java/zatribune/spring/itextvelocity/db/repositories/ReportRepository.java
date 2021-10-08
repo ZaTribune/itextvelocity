@@ -13,6 +13,7 @@ public interface ReportRepository extends CrudRepository<Report,Long> {
              " where r.id=?1")
      Optional<Report> findById(Long id);
 
-
-
+     @Query("select r from Report r left join fetch r.reportFields left join fetch r.reportLists" +
+             " where lower(r.name) =lower(?1)")
+     Optional<Report> findByName(String name);
 }

@@ -10,13 +10,13 @@ import java.util.Map;
 @Setter
 public class PdfRequest {
 
-    private Long reportId;
+    private String reportName;
     private Map<String,Object> data;
 
     @Override
     public String toString() {
         return "PdfRequest{" +
-                "reportId=" + reportId +
+                "reportName=" + reportName +
                 ", data=" + data +
                 '}';
     }

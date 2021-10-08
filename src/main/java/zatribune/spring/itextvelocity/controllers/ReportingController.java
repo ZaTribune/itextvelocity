@@ -1,6 +1,7 @@
 package zatribune.spring.itextvelocity.controllers;
 
 
+import javassist.NotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,7 +24,7 @@ public class ReportingController {
     }
 
     @PostMapping("/pdf")
-     public String generateReport(@RequestBody PdfRequest pdfRequest){
+     public String generateReport(@RequestBody PdfRequest pdfRequest) throws NotFoundException {
         return service.convert(pdfRequest);
      }
 

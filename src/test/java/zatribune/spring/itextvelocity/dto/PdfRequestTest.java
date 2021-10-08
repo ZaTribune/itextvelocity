@@ -30,7 +30,7 @@ class PdfRequestTest {
 
         PdfRequest request = new PdfRequest();
 
-        request.setReportId(224L);
+        request.setReportName("Report One");
 
         Map<String, Object> data = new HashMap<>();
 

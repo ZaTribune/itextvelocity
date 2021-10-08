@@ -23,26 +23,19 @@ public class DevBootstrap implements CommandLineRunner {
         this.repository = repository;
     }
 
-    public void initializePetsReport(){
-
-        ReportList reportList1=new ReportList("petList");
-        reportList1.addListField(new ReportListField("name"));
-        reportList1.addListField(new ReportListField("price"));
-
-
-        Report report1=new Report("Pets report");
-        report1.addReportList(reportList1);
-
-        report1.setTemplate("src/main/resources/reports/pet_template.vm");
-
-        repository.save(report1);
-
-    }
-
     @Override
     public void run(String... args) {
 
-        initializePetsReport();
+        ReportList rl=new ReportList("petList");
+        rl.addListField(new ReportListField("name"));
+        rl.addListField(new ReportListField("price"));
+
+        Report r=new Report("Pets report");
+        r.addReportList(rl);
+
+        r.setTemplate("src/main/resources/reports/pet_template.vm");
+
+        repository.save(r);
 
 
         Report report1=new Report("Employees Report");
