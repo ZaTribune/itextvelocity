@@ -12,7 +12,7 @@
     <artifactId>itextvelocity</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>ITextVelocity</name>
-    <description>Demo project for Creating PDF report in Spring Boot using IText &amp; Velocity</description>
+    <description>Demo project for Creating PDF report in Spring Boot using IText &amp; Apache Velocity.</description>
     <properties>
         <java.version>11</java.version>
         <itextpdf.version>5.5.13.2</itextpdf.version>
