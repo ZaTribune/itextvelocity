@@ -44,33 +44,25 @@ public class DevBootstrap implements CommandLineRunner {
 
         initializePetsReport();
 
-        ReportListField field1=new ReportListField();
 
-        field1.setName("Name");
-
-        ReportListField field2=new ReportListField();
-
-        field2.setName("salary");
-
+        Report report1=new Report("Employees Report");
+        report1.addReportField(new ReportField("note"));
+        report1.addReportField(new ReportField("reason"));
+        report1.addReportField(new ReportField("issued_by"));
 
         ReportList reportList1=new ReportList();
         reportList1.setName("employeesList");
-        reportList1.addListField(field1);
-        reportList1.addListField(field2);
-
-
-        ReportField reportField1=new ReportField();
-        reportField1.setName("Title");
-
-        ReportField reportField2=new ReportField();
-        reportField2.setName("Reason");
-
-        Report report1=new Report();
-        report1.setName("employees report");
-        report1.addReportField(reportField1);
-        report1.addReportField(reportField2);
-
+        reportList1.addListField(new ReportListField("name"));
+        reportList1.addListField(new ReportListField("salary"));
+        reportList1.addListField(new ReportListField("joining_date"));
         report1.addReportList(reportList1);
+
+        ReportList reportList2=new ReportList();
+        reportList2.setName("descriptionList");
+        reportList2.addListField(new ReportListField("description"));
+        report1.addReportList(reportList2);
+
+        report1.setTemplate("src/main/resources/reports/employees_template.vm");
 
         repository.save(report1);
     }

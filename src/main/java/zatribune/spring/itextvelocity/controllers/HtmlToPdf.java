@@ -4,6 +4,7 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.tool.xml.XMLWorkerHelper;
+import zatribune.spring.itextvelocity.reporting.VelocityTemplateParser;
 
 import java.io.File;
 import java.io.FileOutputStream;

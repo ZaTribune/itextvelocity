@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <title>$title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    #*
+      email template takes only live images path which are deployed,
+      not local project paths like src="${pageContext.request.contextPath}/resources/images/<images>.jpg"
+      Issue is fixed by src="www.<domain>.com/images/<image>.jpg"
+      doesn't support SVG
+    *#
+<img src="http://localhost:8080/resources/images/spring.png"
+     style="width:100px;height:100px;" alt="image"/>
+<header>
+    ## check for null/existence
+    <h1>$!title</h1>
+    <h1>${root-path}</h1>
+</header>
+<div class="text-center bg-dark">
+    <h4>Issued By: <span style="color: green">$issued_by</span></h4>
+    <h4>Reason: <span style="color: green">$reason</span></h4>
+    <h4>Note: <span style="color: green">$note</span></h4>
+    <h4>Number Of Employees: <span style="color: green">$employeesList.size()</span></h4>
+
+    <br/>
+    ## used for converting then formatting timestamps
+    #set ( $dateFormat = $dateTool.getDateFormat("yyyy-MM-dd H:m:s", $dateTool.getLocale(), $dateTool.getTimeZone()) )
+    ##
+    #set( $index = 1 )
+    <table style="width:100%">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Joining Date</th>
+        </tr>
+        #foreach( $employee in $employeesList )
+            <tr>
+                <td>$index</td>
+                <td>$employee.name</td>
+                <td>$employee.salary</td>
+                <td>$dateFormat.format($dateTool.epochToDate($employee.joining_date))</td>
+            </tr>
+            #set( $index = $index + 1 )
+        #end
+    </table>
+    <br/>
+    <br/>
+    <ul>
+        #foreach( $item in $descriptionList)
+            <li>$item.description</li>
+        #end
+    </ul>
+</div>
+
+</body>
+
+</html>
