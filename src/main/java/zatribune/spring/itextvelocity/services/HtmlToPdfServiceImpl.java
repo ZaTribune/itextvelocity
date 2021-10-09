@@ -4,6 +4,7 @@ package zatribune.spring.itextvelocity.services;
 import com.itextpdf.text.PageSize;
 import javassist.NotFoundException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import zatribune.spring.itextvelocity.reporting.ITextPdfCreator;
 import zatribune.spring.itextvelocity.reporting.VelocityTemplateParser;
@@ -27,13 +28,13 @@ public class HtmlToPdfServiceImpl implements HtmlToPdfService{
     }
 
     @Override
-    public String convert(PdfRequest request) throws NotFoundException {
+    public ResponseEntity<?> generate(PdfRequest request) throws NotFoundException {
 
         Report report=repository.findByName(request.getReportName())
                 .orElseThrow(()->new NotFoundException(String.format("Report [ %s ] doesn't exist.",request.getReportName())));
         String html = parser.generateHTML(request.getData(),report);
 
         //todo: add page size to the request
-        return pdfCreator.createPdf(html,report, PageSize.A4);
+        return pdfCreator.createPdf(html,report, PageSize.A4,request.getReturnStream());
     }
 }

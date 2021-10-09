@@ -3,12 +3,13 @@ package zatribune.spring.itextvelocity.controllers;
 
 import javassist.NotFoundException;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import zatribune.spring.itextvelocity.dto.PdfRequest;
 import zatribune.spring.itextvelocity.services.HtmlToPdfService;
+
+import javax.servlet.http.HttpServletRequest;
 
 
 @Slf4j
@@ -23,9 +24,10 @@ public class ReportingController {
         this.service = service;
     }
 
-    @PostMapping("/pdf")
-     public String generateReport(@RequestBody PdfRequest pdfRequest) throws NotFoundException {
-        return service.convert(pdfRequest);
+    @PostMapping(value = "/pdf",produces = {MediaType.APPLICATION_PDF_VALUE,MediaType.TEXT_PLAIN_VALUE})
+     public ResponseEntity<?> generateReport(@RequestBody PdfRequest pdfRequest, HttpServletRequest request) throws NotFoundException {
+
+        return service.generate(pdfRequest);
      }
 
 }
