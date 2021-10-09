@@ -11,14 +11,12 @@ import java.util.Map;
 public class PdfRequest {
 
     private String reportName;
-    private Boolean returnStream;
     private Map<String,Object> data;
 
     @Override
     public String toString() {
         return "PdfRequest{" +
                 "reportName='" + reportName + '\'' +
-                ", returnStream=" + returnStream +
                 ", data=" + data +
                 '}';
     }

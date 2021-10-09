@@ -23,7 +23,10 @@ A Demo project for generating PDF reports in Spring Boot using Apache Velocity &
 ```
 http://localhost:8080/report/pdf
 ```  
-Pets Report :
+- Note: Supported responses are [application/pdf, text/plain]. The second option is useful in cases when you need to return just
+ a path for the generated pdf file {a performance-wise choice -> helps in some cases} so, you need to specify the returned response using the [Accept] HTTP header.  
+ 
+ Example (1) Pets Report :
 ```
 
 {
@@ -43,7 +46,7 @@ Pets Report :
 }
 
 ```
- Employees Report :
+ Example (2) Employees Report :
 ```
 {
     "reportName": "Employees Report",

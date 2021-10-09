@@ -42,7 +42,7 @@ public class ITextPdfCreator {
     @Value("${reporting.creator}")
     private String creator;
 
-    public ResponseEntity<?> createPdf(String html, Report report, Rectangle pageSize, Boolean returnStream) {
+    public ResponseEntity<?> createPdf(String html, Report report, Rectangle pageSize, MediaType mediaType) {
         PdfWriter pdfWriter;
         // create a new pdf document
         Document pdfDocument = new Document();
@@ -72,7 +72,7 @@ public class ITextPdfCreator {
             pdfDocument.close();
             // close the writer
             pdfWriter.close();
-            if (returnStream) {
+            if (mediaType.equals(MediaType.APPLICATION_PDF)) {
                 PdfReader reader = new PdfReader(resultPath);
                 //you can only retrieve the ByteArrayOutputStream after using a stamper
                 PdfStamper stamper = new PdfStamper(reader, baos);
