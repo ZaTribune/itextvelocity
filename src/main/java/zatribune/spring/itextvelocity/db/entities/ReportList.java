@@ -34,6 +34,12 @@ public class ReportList {
         listFields.add(listField);
     }
 
+    public void addListField(String listFieldName){
+        ReportListField field=new ReportListField(listFieldName);
+        field.setReportList(this);
+        listFields.add(field);
+    }
+
 
 
 }

@@ -31,7 +31,8 @@ public class Report {
         this.name = name;
     }
 
-    public void addReportField(ReportField field){
+    public void addReportField(String fieldName){
+        ReportField field=new ReportField(fieldName);
         field.setReport(this);
         reportFields.add(field);
     }

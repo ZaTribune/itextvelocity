@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <title></title>
+    <style type="text/css">
+        body {
+            font-family: Arial, serif;
+            padding: 0;
+            margin: 0 auto;
+        }
+
+        table {
+            width: 690px;
+            font-family: Arial, serif;
+            border-collapse: collapse;
+            /*border:1px solid black;*/
+            background-color: #fff;
+        }
+
+        table td {
+            font-size: 11px;
+            /*border:1px solid black;*/
+            font-family: Arial, serif;
+        }
+    </style>
+</head>
+<body>
+    #set ( $dateFormat = $dateTool.getDateFormat("yyyy-MM-dd H:m:s", $dateTool.getLocale(), $dateTool.getTimeZone()))
+<table>
+    <tr>
+        <td><h3><b>$title</b></h3></td>
+        <td><i>generated at: <span class="DOC_GENERATED_DATE">$dateFormat.format($dateTool.currentDate())</span></i>
+        </td>
+        <td style="padding:10px;text-align:center">
+            <img style="height:60px;"
+                 src="http://localhost:8080/resources/images/banque_misr.png" alt="image"/>
+        </td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <td><b>Invoice Data</b></td>
+        <td colspan="5" style="background-color:#EEEEEE">
+            $invoice_data
+        </td>
+        <td><b>Customer's Name</b></td>
+        <td colspan="2" style="background-color:#EEEEEE">
+            $customer_name
+        </td>
+    </tr>
+    <tr>
+        <td><b>Invoice Number</b></td>
+        <td colspan="5" style="background-color:#EEEEEE">
+            $invoice_number
+        </td>
+        <td><b>Address</b></td>
+        <td colspan="2" style="background-color:#EEEEEE">
+            $address
+        </td>
+    </tr>
+    <tr>
+        <td><b>Amount</b></td>
+        <td colspan="5" style="background-color:#EEEEEE">
+            $amount
+        </td>
+        <td><b>Mobile Number</b></td>
+        <td colspan="2" style="background-color:#EEEEEE">
+            $mobile_number
+        </td>
+    </tr>
+    <tr>
+        <td colspan="9">
+            <hr/>
+        </td>
+    </tr>
+    <tr>
+        <td></td>##for the month
+        <td><b>Invoice Date</b></td>
+        <td><b>Invoice Number</b></td>
+        <td><b>Amount</b></td>
+        <td><b>Num Category</b></td>
+        <td><b>Call Plan</b></td>
+        <td><b>Payment Date</b></td>
+        <td><b>Upload Date</b></td>
+        <td><b>Status</b></td>
+    </tr>
+    #foreach( $entry in $dataList )
+        <tr>
+            <td>$entry.month</td>
+            <td>$entry.invoice_date</td>
+            <td>$entry.invoice_number</td>
+            <td>$entry.amount</td>
+            <td>$entry.num_category</td>
+            <td>$entry.call_plan</td>
+            <td>$entry.payment_date</td>
+            <td>$entry.upload_date</td>
+            <td>$entry.status</td>
+        </tr>
+    #end
+</table>
+</body>
+</html>

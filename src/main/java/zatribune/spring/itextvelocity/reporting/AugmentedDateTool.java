@@ -20,4 +20,10 @@ public class AugmentedDateTool extends DateTool {
     public Date epochToDate(Long msSinceEpoch) {
         return new Date(msSinceEpoch);
     }
+
+
+    public Date currentDate() {
+
+        return new Date();
+    }
 }

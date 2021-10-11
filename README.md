@@ -99,7 +99,44 @@ http://localhost:8080/report/pdf
         ]
     }
 }
-```  
-
+``` 
+ Example (3) Banking Invoice Report :
+``` 
+{
+    "reportName": "Auto Debit Recharge Information",
+    "data": {
+        "invoice_data":"Accounting & Billing",
+        "customer_name":"Ibrahim Osama",
+        "invoice_number":83,
+        "address":"24 Mohammed Mazhar, Zamalek, Giza Governorate",
+        "amount":5000,
+        "mobile_number":"+201114566266",
+        "dataList": [
+            {
+                "month": "September 2021",
+                "invoice_date": "2021-09-22 02:2:34",
+                "invoice_number":80 ,
+                "amount": 2500,
+                "num_category": 4,
+                "call_plan": "2021-09-18 14:5:34",
+                "payment_date":"2021-09-10 08:5:34",
+                "upload_date": "2021-09-22 02:2:34",
+                "status": "Accepted"
+            },
+            {
+            "month": "October 2021",
+                "invoice_date": "2021-10-02 02:2:34",
+                "invoice_number":81 ,
+                "amount": 8700,
+                "num_category": 4,
+                "call_plan": "2021-10-01 01:6:02",
+                "payment_date":"2021-10-03 12:6:04",
+                "upload_date": "2021-10-07 02:2:50",
+                "status": "Declined"
+            }
+        ]
+    }
+}
+```
 ## Authors  
    **Muhammad Ali** - find me on : [LinkedIn](https://www.linkedin.com/in/zatribune).    

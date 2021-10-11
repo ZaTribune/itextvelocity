@@ -39,7 +39,7 @@
 
     <br/>
     ## used for converting then formatting timestamps
-    #set ( $dateFormat = $dateTool.getDateFormat("yyyy-MM-dd H:m:s", $dateTool.getLocale(), $dateTool.getTimeZone()) )
+    #set ( $dateFormat = $dateTool.getDateFormat("yyyy-MM-dd H:m:s", $dateTool.getLocale(), $dateTool.getTimeZone()))
     ##
     #set( $index = 1 )
     <table style="width:100%">

@@ -30,14 +30,11 @@ public class AdvisorController {
     public ResponseEntity<Object> notFoundException(
             NotFoundException ex, WebRequest request) {
         log.error(ex.getMessage());
-
-        HttpHeaders headers=new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
         Map<String, Object> body = new LinkedHashMap<>();
-
         body.put("timestamp", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.S'Z'").format(new Date()));
         body.put("message", ex.getMessage());
-
+        HttpHeaders headers=new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
         return new ResponseEntity<>(body,headers, HttpStatus.NOT_FOUND);
     }
 
@@ -58,11 +55,11 @@ public class AdvisorController {
             HttpMediaTypeNotAcceptableException ex, WebRequest request) {
         String message=String.format("Supported Media types are %s. Please, adjust your HTTP [Accept] header.",ex.getSupportedMediaTypes());
         log.error(message);
-        HttpHeaders headers=new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("timestamp", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.S'Z'").format(new Date()));
         body.put("message", message);
+        HttpHeaders headers=new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
         return new ResponseEntity<>(body,headers, HttpStatus.UNSUPPORTED_MEDIA_TYPE);
     }
 }

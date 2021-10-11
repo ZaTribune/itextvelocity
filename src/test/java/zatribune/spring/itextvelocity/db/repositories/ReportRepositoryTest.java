@@ -23,19 +23,10 @@ class ReportRepositoryTest {
     @BeforeEach
     private void setup(){
 
-        ReportListField field1=new ReportListField();
-
-        field1.setName("Name");
-
-        ReportListField field2=new ReportListField();
-
-        field2.setName("salary");
-
-
         ReportList reportList1=new ReportList();
         reportList1.setName("employeesList");
-        reportList1.addListField(field1);
-        reportList1.addListField(field2);
+        reportList1.addListField("Name");
+        reportList1.addListField("salary");
 
 
         ReportField reportField1=new ReportField();
@@ -46,8 +37,8 @@ class ReportRepositoryTest {
 
         Report report1=new Report();
         report1.setName("employees report");
-        report1.addReportField(reportField1);
-        report1.addReportField(reportField2);
+        report1.addReportField("Name");
+        report1.addReportField("salary");
 
         report1.addReportList(reportList1);
 
