@@ -1,6 +1,6 @@
-# ITEXT Velocity
+# springboot-itext5-velocity-example
   
-A Demo project for generating PDF reports in Spring Boot using Apache Velocity &amp; IText.  
+A Demo project for generating PDF reports in Spring Boot using IText 5 &amp; Apache Velocity.  
 
 <p align="center">
   <table>
@@ -54,7 +54,7 @@ http://localhost:8080/report/pdf
         "employeesList": [
             {
                 "salary": 10000,
-                "name": "Ibrahim Osama",
+                "name": "John Doe",
                 "joining_date": 1633694734587
             },
             {
@@ -64,28 +64,28 @@ http://localhost:8080/report/pdf
             },
             {
                 "salary": 800,
-                "name": "Mostafa Al-Sagher",
+                "name": "Bill Gates",
                 "joining_date": 1633694734587
             },
             {
                 "salary": 0,
-                "name": "Rana Adel",
+                "name": "Michael Truman",
                 "joining_date": 1633694734587
             },
             {
                 "salary": 800,
-                "name": "Sara Ahmed",
+                "name": "Sara Whatever",
                 "joining_date": 1633694734587
             },
             {
                 "salary": 1200,
-                "name": "Karim Raafat",
+                "name": "Steve Jobs",
                 "joining_date": 1633694734587
             }
         ],
         "reason": "Requested by the CEO.",
         "note": "From the fall of 2020.",
-        "issued_by": "Mr. Ibrahim Osama.",
+        "issued_by": "Mr. Nicola Tesla.",
         "descriptionList": [
             {
                 "description": "This data is discloused and not eligable to be shared outside of the organization."
@@ -106,7 +106,7 @@ http://localhost:8080/report/pdf
     "reportName": "Auto Debit Recharge Information",
     "data": {
         "invoice_data":"Accounting & Billing",
-        "customer_name":"Ibrahim Osama",
+        "customer_name":"John Doe",
         "invoice_number":83,
         "address":"24 Mohammed Mazhar, Zamalek, Giza Governorate",
         "amount":5000,
@@ -139,4 +139,4 @@ http://localhost:8080/report/pdf
 }
 ```
 ## Authors  
-   **Muhammad Ali** - find me on : [LinkedIn](https://www.linkedin.com/in/zatribune).    
+[![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&label=Muhammad%20Ali)](https://linkedin.com/in/zatribune) 
